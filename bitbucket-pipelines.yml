@@ -1,0 +1,62 @@
+image: postgres:14
+
+pipelines:
+  default:
+    - step:
+        name: Lint SQL
+        script:
+          - apt-get update && apt-get install -y sqlfluff
+          - sqlfluff lint sql/ --dialect postgres
+        
+  branches:
+    develop:
+      - step:
+          name: Run Data Quality Tests
+          services:
+            - postgres
+          script:
+            - export PGPASSWORD=$DEV_DB_PASSWORD
+            - psql -h $DEV_DB_HOST -U $DEV_DB_USER -d rcm_analytics -f tests/data_quality_tests.sql
+            - psql -h $DEV_DB_HOST -U $DEV_DB_USER -d rcm_analytics -f tests/schema_tests.sql
+          
+      - step:
+          name: Deploy to Dev
+          deployment: dev
+          script:
+            - chmod +x scripts/deploy_staging.sh
+            - ./scripts/deploy_staging.sh
+          
+    main:
+      - step:
+          name: Run Full Test Suite
+          services:
+            - postgres
+          script:
+            - export PGPASSWORD=$PROD_DB_PASSWORD
+            - psql -h $PROD_DB_HOST -U $PROD_DB_USER -d rcm_analytics -f tests/data_quality_tests.sql
+            - psql -h $PROD_DB_HOST -U $PROD_DB_USER -d rcm_analytics -f tests/schema_tests.sql
+            
+      - step:
+          name: Deploy to Production
+          deployment: production
+          trigger: manual
+          script:
+            - chmod +x scripts/deploy_production.sh
+            - ./scripts/deploy_production.sh
+            
+  custom:
+    backfill-historical:
+      - step:
+          name: Backfill Historical Data
+          script:
+            - export PGPASSWORD=$PROD_DB_PASSWORD
+            - psql -h $PROD_DB_HOST -U $PROD_DB_USER -d rcm_analytics -f sql/backfill/historical_load.sql
+
+definitions:
+  services:
+    postgres:
+      image: postgres:14
+      environment:
+        POSTGRES_DB: rcm_analytics_test
+        POSTGRES_USER: test_user
+        POSTGRES_PASSWORD: test_password
