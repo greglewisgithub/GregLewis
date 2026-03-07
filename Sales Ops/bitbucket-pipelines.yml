@@ -1,0 +1,44 @@
+image: postgres:14
+
+pipelines:
+  default:
+    - step:
+        name: Lint Sales Ops SQL
+        script:
+          - apt-get update && apt-get install -y python3-pip
+          - pip3 install sqlfluff==3.0.7
+          - sqlfluff lint "Sales Ops/sql" --dialect postgres
+
+  branches:
+    develop:
+      - step:
+          name: Deploy Sales Ops to Dev
+          script:
+            - chmod +x "Sales Ops/scripts/deploy_salesops.sh"
+            - |
+              "Sales Ops/scripts/deploy_salesops.sh" \
+                --db-host "$DEV_DB_HOST" \
+                --db-user "$DEV_DB_USER" \
+                --db-name "salesops_analytics" \
+                --db-password "$DEV_DB_PASSWORD"
+
+    main:
+      - step:
+          name: Run Sales Ops SQL Tests
+          script:
+            - export PGPASSWORD="$PROD_DB_PASSWORD"
+            - psql -h "$PROD_DB_HOST" -U "$PROD_DB_USER" -d salesops_analytics -f "Sales Ops/tests/data_quality_tests.sql"
+            - psql -h "$PROD_DB_HOST" -U "$PROD_DB_USER" -d salesops_analytics -f "Sales Ops/tests/schema_tests.sql"
+
+      - step:
+          name: Deploy Sales Ops to Production
+          deployment: production
+          trigger: manual
+          script:
+            - chmod +x "Sales Ops/scripts/deploy_salesops.sh"
+            - |
+              "Sales Ops/scripts/deploy_salesops.sh" \
+                --db-host "$PROD_DB_HOST" \
+                --db-user "$PROD_DB_USER" \
+                --db-name "salesops_analytics" \
+                --db-password "$PROD_DB_PASSWORD"
