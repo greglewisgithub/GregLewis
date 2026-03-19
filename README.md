@@ -9,18 +9,18 @@
 
 ## From data to metrics that impact the bottom line.
 
-This repository showcases how I approach analytics as a business leader, not just a report builder: by translating messy operational workflows into decision-grade data products, KPI frameworks, and deployment-ready SQL pipelines.
+This repository showcases how to approach analytics as a business leader, translating messy operational workflows into decision-grade data products, KPI frameworks, and deployment-ready SQL pipelines.
 
-For employers evaluating me for a **Senior Manager**, **Director**, or **Head of Analytics / Business Intelligence** role, this portfolio demonstrates the blend of capabilities I bring to the table:
+For businesses needing to step into the modern age of data, these examples reflect a rock-solid way to minimize noise and maximize change:
 
+Strategic mindset:
 - **Executive-minded analytics strategy** tied to business outcomes.
 - **Hands-on analytics engineering** across staging, intermediate, fact, and metric layers.
 - **Operational performance management** for revenue, service, and process improvement teams.
 - **Data quality and deployment discipline** that supports scalable, trustworthy reporting.
 - **Cross-functional thinking** across finance, operations, sales, and healthcare revenue cycle domains.
 
-For businesses seeking an **Analytics Consultant**, these examples reflect the kind of work I can help design and deliver:
-
+Mission critical deliverables:
 - KPI architectures for executive dashboards.
 - Funnel and pipeline analytics for go-to-market teams.
 - Revenue cycle / denial / claims analytics for healthcare operators.
