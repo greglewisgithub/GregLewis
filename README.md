@@ -7,7 +7,7 @@
   <a href="https://www.tableau.com/" target="_blank"><img alt="Tableau Ready" src="https://img.shields.io/badge/BI-Tableau%20Ready-E97627?logo=tableau&logoColor=white"></a>
 </p>
 
-## Turning operational complexity into measurable business performance.
+## From data to metrics that impact the bottom line.
 
 This repository showcases how I approach analytics as a business leader, not just a report builder: by translating messy operational workflows into decision-grade data products, KPI frameworks, and deployment-ready SQL pipelines.
 
@@ -29,7 +29,7 @@ For businesses seeking an **Analytics Consultant**, these examples reflect the k
 
 ---
 
-## What this portfolio highlights
+## What is in here:
 
 ### 1) Revenue Cycle Management analytics
 The `RCM` project models the healthcare claims lifecycle, denial categorization, and root-cause analysis needed to improve collections, reduce write-offs, and prioritize interventions. It includes:
@@ -134,20 +134,20 @@ GregLewis/
 
 ---
 
-## How I would help an employer or client
+## How this helps businesses
 
 If you are hiring for a senior analytics leader or engaging a consultant, this portfolio reflects the type of outcomes I help create:
 
-### For employers
-I can help build or scale an analytics function that:
+### Can be built:
+Create or scale an analytics function that:
 - aligns roadmaps to business priorities,
 - improves trust in KPI reporting,
 - creates stronger visibility into operational performance,
 - upgrades reporting from reactive to decision-driving,
 - and establishes better partnership between analytics and the business.
 
-### For consulting clients
-I can help deliver:
+### Can be delivered:
+Implement:
 - KPI framework design,
 - data model redesign,
 - SQL pipeline modernization,
@@ -158,19 +158,14 @@ I can help deliver:
 
 ---
 
-## Selected technologies and practices
+## Highlighted technologies and practices
 
 - **SQL / PostgreSQL** for transformation and analytics modeling.
 - **Layered ELT design** using staging, intermediate, and mart patterns.
 - **Operational KPI modeling** for executive and manager-level scorecards.
 - **CI/CD** with Bitbucket Pipelines.
 - **Deployment scripting** with Bash.
-- **BI-consumption readiness** for tools such as Tableau.
-
-Helpful references:
-- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
-- [Bitbucket Pipelines Documentation](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines/)
-- [Tableau](https://www.tableau.com/)
+- **BI-consumption readiness** for tools such as Power BI, Tableau, Looker, ThoughtSpot, QuickSights, Alteryx, and Informatica.
 
 ---
 
@@ -195,8 +190,8 @@ If you only review a handful of files, start here:
 
 ## Final note
 
-This is a portfolio repository, but it is also a statement about how I lead:
+This is a portfolio repository, but it is also a statement about how to deliver powerful, high-impact simplicity from disparate and complex data sources:
 
-> Build analytics that executives trust, operators use, and the business can scale on.
+> Build analytics that hold up under scrutiny, drive operations, and scale with growth.
 
-If you are looking for someone who can operate comfortably in both the **boardroom conversation** and the **SQL details underneath it**, this body of work is a strong representation of my approach.
+These are metrics that operate comfortably in both the **boardroom conversation** and the **SQL details underneath it**.
