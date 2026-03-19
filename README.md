@@ -1,4 +1,4 @@
-# Greg Lewis | Analytics Leadership Portfolio
+# Greg Lewis | Modern Analytics Leadership
 
 <p align="left">
   <a href="https://www.postgresql.org/docs/" target="_blank"><img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-Analytics%20Engineering-336791?logo=postgresql&logoColor=white"></a>
