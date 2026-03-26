@@ -1,0 +1,44 @@
+image: postgres:14
+
+pipelines:
+  default:
+    - step:
+        name: Lint Finance Ops SQL
+        script:
+          - apt-get update && apt-get install -y python3-pip
+          - pip3 install sqlfluff==3.0.7
+          - sqlfluff lint "Finance Ops/sql" --dialect postgres
+
+  branches:
+    develop:
+      - step:
+          name: Deploy Finance Ops to Dev
+          script:
+            - chmod +x "Finance Ops/scripts/deploy_financeops.sh"
+            - |
+              "Finance Ops/scripts/deploy_financeops.sh" \
+                --db-host "$DEV_DB_HOST" \
+                --db-user "$DEV_DB_USER" \
+                --db-name "financeops_analytics" \
+                --db-password "$DEV_DB_PASSWORD"
+
+    main:
+      - step:
+          name: Run Finance Ops SQL Tests
+          script:
+            - export PGPASSWORD="$PROD_DB_PASSWORD"
+            - psql -h "$PROD_DB_HOST" -U "$PROD_DB_USER" -d financeops_analytics -f "Finance Ops/tests/data_quality_tests.sql"
+            - psql -h "$PROD_DB_HOST" -U "$PROD_DB_USER" -d financeops_analytics -f "Finance Ops/tests/schema_tests.sql"
+
+      - step:
+          name: Deploy Finance Ops to Production
+          deployment: production
+          trigger: manual
+          script:
+            - chmod +x "Finance Ops/scripts/deploy_financeops.sh"
+            - |
+              "Finance Ops/scripts/deploy_financeops.sh" \
+                --db-host "$PROD_DB_HOST" \
+                --db-user "$PROD_DB_USER" \
+                --db-name "financeops_analytics" \
+                --db-password "$PROD_DB_PASSWORD"
