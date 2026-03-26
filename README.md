@@ -1,4 +1,4 @@
-# Greg Lewis | Modern Analytics Leadership
+# Greg Lewis | Analytics Leadership Portfolio
 
 <p align="left">
   <a href="https://www.postgresql.org/docs/" target="_blank"><img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-Analytics%20Engineering-336791?logo=postgresql&logoColor=white"></a>
@@ -7,20 +7,20 @@
   <a href="https://www.tableau.com/" target="_blank"><img alt="Tableau Ready" src="https://img.shields.io/badge/BI-Tableau%20Ready-E97627?logo=tableau&logoColor=white"></a>
 </p>
 
-## From data to metrics that impact the bottom line.
+## Turning operational complexity into measurable business performance.
 
-This repository showcases how to approach analytics as a business leader, translating messy operational workflows into decision-grade data products, KPI frameworks, and deployment-ready SQL pipelines.
+This repository showcases how I approach analytics as a business leader, not just a report builder: by translating messy operational workflows into decision-grade data products, KPI frameworks, and deployment-ready SQL pipelines.
 
-For businesses needing to step into the modern age of data, these examples reflect a rock-solid way to minimize noise and maximize change:
+For employers evaluating me for a **Senior Manager**, **Director**, or **Head of Analytics / Business Intelligence** role, this portfolio demonstrates the blend of capabilities I bring to the table:
 
-Strategic mindset:
 - **Executive-minded analytics strategy** tied to business outcomes.
 - **Hands-on analytics engineering** across staging, intermediate, fact, and metric layers.
 - **Operational performance management** for revenue, service, and process improvement teams.
 - **Data quality and deployment discipline** that supports scalable, trustworthy reporting.
 - **Cross-functional thinking** across finance, operations, sales, and healthcare revenue cycle domains.
 
-Mission critical deliverables:
+For businesses seeking an **Analytics Consultant**, these examples reflect the kind of work I can help design and deliver:
+
 - KPI architectures for executive dashboards.
 - Funnel and pipeline analytics for go-to-market teams.
 - Revenue cycle / denial / claims analytics for healthcare operators.
@@ -29,7 +29,7 @@ Mission critical deliverables:
 
 ---
 
-## What is in here:
+## What this portfolio highlights
 
 ### 1) Revenue Cycle Management analytics
 The `RCM` project models the healthcare claims lifecycle, denial categorization, and root-cause analysis needed to improve collections, reduce write-offs, and prioritize interventions. It includes:
@@ -134,20 +134,20 @@ GregLewis/
 
 ---
 
-## How this helps businesses
+## How I would help an employer or client
 
 If you are hiring for a senior analytics leader or engaging a consultant, this portfolio reflects the type of outcomes I help create:
 
-### Can be built:
-Create or scale an analytics function that:
+### For employers
+I can help build or scale an analytics function that:
 - aligns roadmaps to business priorities,
 - improves trust in KPI reporting,
 - creates stronger visibility into operational performance,
 - upgrades reporting from reactive to decision-driving,
 - and establishes better partnership between analytics and the business.
 
-### Can be delivered:
-Implement:
+### For consulting clients
+I can help deliver:
 - KPI framework design,
 - data model redesign,
 - SQL pipeline modernization,
@@ -158,14 +158,19 @@ Implement:
 
 ---
 
-## Highlighted technologies and practices
+## Selected technologies and practices
 
 - **SQL / PostgreSQL** for transformation and analytics modeling.
 - **Layered ELT design** using staging, intermediate, and mart patterns.
 - **Operational KPI modeling** for executive and manager-level scorecards.
 - **CI/CD** with Bitbucket Pipelines.
 - **Deployment scripting** with Bash.
-- **BI-consumption readiness** for tools such as Power BI, Tableau, Looker, ThoughtSpot, QuickSights, Alteryx, and Informatica.
+- **BI-consumption readiness** for tools such as Tableau.
+
+Helpful references:
+- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
+- [Bitbucket Pipelines Documentation](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines/)
+- [Tableau](https://www.tableau.com/)
 
 ---
 
@@ -190,8 +195,8 @@ If you only review a handful of files, start here:
 
 ## Final note
 
-This is a portfolio repository, but it is also a statement about how to deliver powerful, high-impact simplicity from disparate and complex data sources:
+This is a portfolio repository, but it is also a statement about how I lead:
 
-> Build analytics that hold up under scrutiny, drive operations, and scale with growth.
+> Build analytics that executives trust, operators use, and the business can scale on.
 
-These are metrics that operate comfortably in both the **boardroom conversation** and the **SQL details underneath it**.
+If you are looking for someone who can operate comfortably in both the **boardroom conversation** and the **SQL details underneath it**, this body of work is a strong representation of my approach.

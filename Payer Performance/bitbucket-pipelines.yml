@@ -1,0 +1,44 @@
+image: postgres:14
+
+pipelines:
+  default:
+    - step:
+        name: Lint Payer Performance SQL
+        script:
+          - apt-get update && apt-get install -y python3-pip
+          - pip3 install sqlfluff==3.0.7
+          - sqlfluff lint "Payer Performance/sql" --dialect postgres
+
+  branches:
+    develop:
+      - step:
+          name: Deploy Payer Performance to Dev
+          script:
+            - chmod +x "Payer Performance/scripts/deploy_payer_performance.sh"
+            - |
+              "Payer Performance/scripts/deploy_payer_performance.sh" \
+                --db-host "$DEV_DB_HOST" \
+                --db-user "$DEV_DB_USER" \
+                --db-name "payer_performance_analytics" \
+                --db-password "$DEV_DB_PASSWORD"
+
+    main:
+      - step:
+          name: Run Payer Performance SQL Tests
+          script:
+            - export PGPASSWORD="$PROD_DB_PASSWORD"
+            - psql -h "$PROD_DB_HOST" -U "$PROD_DB_USER" -d payer_performance_analytics -f "Payer Performance/tests/data_quality_tests.sql"
+            - psql -h "$PROD_DB_HOST" -U "$PROD_DB_USER" -d payer_performance_analytics -f "Payer Performance/tests/schema_tests.sql"
+
+      - step:
+          name: Deploy Payer Performance to Production
+          deployment: production
+          trigger: manual
+          script:
+            - chmod +x "Payer Performance/scripts/deploy_payer_performance.sh"
+            - |
+              "Payer Performance/scripts/deploy_payer_performance.sh" \
+                --db-host "$PROD_DB_HOST" \
+                --db-user "$PROD_DB_USER" \
+                --db-name "payer_performance_analytics" \
+                --db-password "$PROD_DB_PASSWORD"
