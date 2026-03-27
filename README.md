@@ -60,17 +60,19 @@ The `Sales Ops` project demonstrates a clean analytics stack for pipeline visibi
 - [`Sales Ops/scripts/deploy_salesops.sh`](./Sales%20Ops/scripts/deploy_salesops.sh)
 
 ### 3) Finance Operations and revenue forecasting analytics
-The `Finance Ops` project bridges pipeline planning to realized outcomes through forecast lifecycle analytics, quota attainment, and budget-versus-actual monitoring. It includes:
+The `Finance Ops` project bridges pipeline planning to realized outcomes through forecast lifecycle analytics, quota attainment, ARR/MRR movement, revenue leakage monitoring, budget-versus-actual analysis, and cash conversion timing. It includes:
 
 - staging models for bookings, forecast snapshots, quota, budget, and actual financials.
-- intermediate models for forecast blending, bookings-to-quota reconciliation, and cash conversion analysis.
-- fact and aggregate metric tables at monthly and quarterly grains for executive operating reviews.
+- intermediate models for forecast blending, bookings-to-quota reconciliation, ARR/MRR movement, revenue leakage, and cash conversion analysis.
+- fact and aggregate metric tables at monthly and quarterly grains for executive operating reviews, including forecast accuracy by segment/rep/region.
 - SQL tests and deployment automation for repeatable production rollouts.
 
 **Representative assets:**
 - [`Finance Ops/sql/03_marts/fct_revenue_forecast_lifecycle.sql`](./Finance%20Ops/sql/03_marts/fct_revenue_forecast_lifecycle.sql)
 - [`Finance Ops/sql/03_marts/fct_bookings_attainment.sql`](./Finance%20Ops/sql/03_marts/fct_bookings_attainment.sql)
 - [`Finance Ops/sql/03_marts/fct_budget_actual_variance.sql`](./Finance%20Ops/sql/03_marts/fct_budget_actual_variance.sql)
+- [`Finance Ops/sql/03_marts/fct_arr_mrr_movement.sql`](./Finance%20Ops/sql/03_marts/fct_arr_mrr_movement.sql)
+- [`Finance Ops/sql/03_marts/fct_revenue_leakage.sql`](./Finance%20Ops/sql/03_marts/fct_revenue_leakage.sql)
 - [`Finance Ops/sql/03_marts/metrics_financeops_monthly.sql`](./Finance%20Ops/sql/03_marts/metrics_financeops_monthly.sql)
 - [`Finance Ops/scripts/deploy_financeops.sh`](./Finance%20Ops/scripts/deploy_financeops.sh)
 
@@ -124,7 +126,7 @@ That is the level where I add the most value: connecting strategy, process, anal
 | Analytics engineering | Modular SQL architecture across staging, intermediate, and mart layers |
 | Revenue cycle analytics | Claims lifecycle, denial categorization, recovery analysis, and root-cause prioritization |
 | Sales / GTM analytics | Funnel conversion, pipeline performance, rep productivity, and RFP operations |
-| Finance operations analytics | Forecast lifecycle, bookings-to-quota attainment, and budget-vs-actual variance |
+| Finance operations analytics | Bookings-vs-forecast, quota attainment, ARR/MRR movement, revenue leakage, budget-vs-actual variance, and cash conversion timing |
 | Data quality management | SQL-based data quality tests and monitoring inserts |
 | Deployment discipline | Shell-based deployment scripts and Bitbucket pipeline definitions |
 | Executive reporting readiness | Aggregations at daily, weekly, monthly, and quarterly grains |

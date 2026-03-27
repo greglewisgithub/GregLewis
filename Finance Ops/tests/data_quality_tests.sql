@@ -15,3 +15,14 @@ WHERE quota_amount < 0;
 SELECT owner_id, forecast_month, forecast_accuracy_ratio
 FROM analytics.fct_revenue_forecast_lifecycle
 WHERE forecast_accuracy_ratio < 0;
+
+-- 4) Ensure total leakage exposure is non-negative
+SELECT owner_id, metric_month, total_leakage_exposure
+FROM analytics.fct_revenue_leakage
+WHERE total_leakage_exposure < 0;
+
+-- 5) Ensure movement type values are in the defined set
+SELECT movement_type, COUNT(*) AS bad_rows
+FROM analytics.fct_arr_mrr_movement
+WHERE movement_type NOT IN ('New', 'Expansion', 'Contraction', 'Churn', 'Flat')
+GROUP BY movement_type;
