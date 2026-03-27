@@ -78,7 +78,7 @@ The `Finance Ops` project bridges pipeline planning to realized outcomes through
 
 ---
 
-## Leadership lens: what potential employers should see here
+## Leadership lens: what businesses should see here
 
 This repository is intentionally structured to show more than technical competence. It reflects how I think about analytics leadership at scale:
 
